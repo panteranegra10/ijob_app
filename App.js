@@ -17,36 +17,41 @@ export default function App() {
   return (
     <View style={styles.container}>
 
-      <Text h3>Tela de Login</Text>
+     
       <Image
-        source={ require('./assets/IJOB.png') }
+        source={ require('./assets/ijob_branca.png') }
         containerStyle={styles.item}
       />
       <Input
         placeholder="E-mail"
-        leftIcon={{ type: 'font-awesome', name: 'envelope' }}
+        rightIcon={{ type: 'font-awesome', name: 'envelope' }}
         style={styles}
         onChangeText={value => setEmail(value)}
         keyboardType="email-address"
       />
       <Input
         placeholder="Senha"
-        leftIcon={{ type: 'font-awesome', name: 'lock' }}
+        rightIcon={{ type: 'font-awesome', name: 'lock' }}
         style={styles}
         onChangeText={value => setPassword(value)}
         secureTextEntry={true}
       />
       <Button
-        icon={
-          <Icon
-            name="arrow-right"
-            size={15}
-            color="white"
-          />
-        }
-        title="Entrar"
-        onPress={() => entrar()}
-      />
+              title="Login"
+              buttonStyle={{
+                backgroundColor: '#1e53d9',
+                borderWidth: 2,
+                borderColor: 'white',
+                borderRadius: 30,
+              }}
+              containerStyle={{
+                width: 200,
+                marginHorizontal: 50,
+                marginVertical: 10,
+              }}
+              titleStyle={{ fontWeight: 'bold' }}
+              onPass={() => entrar()}
+            />
 
 
     </View>
@@ -56,15 +61,15 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0000FF',
+    backgroundColor: '#1e53d9',
     alignItems: 'center',
     justifyContent: 'center',
   },
   item: {
-    aspectRatio: 2.8,
+    aspectRatio: 1.0,
     resizeMode: "cover",
-    width: 120,
-    height: 100,
+    width: 140,
+    height: 120,
   },
   
 });
